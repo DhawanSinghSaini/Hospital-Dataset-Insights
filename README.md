@@ -134,14 +134,10 @@ Documents data provenance, transformation logic, privacy compliance, and dimensi
 
 ## 🏗️ Data Model & ETL Rules
 
-![Data Model Schema](images/model.jpg)
+![Data Model Schema](images/model.png)
 
 ### Schema Pattern: Star Schema
-The model is anchored on `Fact_Encounters` and surrounded by key single-direction ($1 \rightarrow *$) dimension tables linked via surrogate keys:
-* `Dim_AdmissionType` $[ \text{AdmissionTypeKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Admission Type ID} ]$
-* `Dim_DischargeDisposition` $[ \text{DischargeDispositionKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Discharge Disposition ID} ]$
-* `Dim_AdmissionSource` $[ \text{AdmissionSourceKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Admission Source ID} ]$
-* `_Measures`: Isolated DAX container table housing all explicit measures (implicit visual summation disabled).
+The model is anchored on `Fact_Encounters` and surrounded by key single-direction ($1 \rightarrow *$) dimension tables linked via surrogate keys
 
 ### Data Cleaning & Power Query ETL Transformations
 1. **Missing Value Handling:** String missing indicators (`?`, `NULL`) replaced with standard categories (`"Unknown"`, `"Not Available"`).
