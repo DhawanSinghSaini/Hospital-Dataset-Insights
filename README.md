@@ -138,25 +138,6 @@ Documents data provenance, transformation logic, privacy compliance, and dimensi
 
 ![Data Model Schema](images/model.png)
 
-### Schema Pattern: Star Schema
-The model is anchored on `Fact_Encounters` and surrounded by key single-direction ($1 \rightarrow *$) dimension tables linked via surrogate keys:
-* `Dim_AdmissionType` $[ \text{AdmissionTypeKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Admission Type ID} ]$
-* `Dim_DischargeDisposition` $[ \text{DischargeDispositionKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Discharge Disposition ID} ]$
-* `Dim_AdmissionSource` $[ \text{AdmissionSourceKey} ] \rightarrow \text{Fact\_Encounters}[ \text{Admission Source ID} ]$
-* `_Measures`: Isolated DAX container table housing all explicit measures (implicit visual summation disabled).
-
-### Data Cleaning & Power Query ETL Transformations
-1. **Missing Value Handling:** String missing indicators (`?`, `NULL`) replaced with standard categories (`"Unknown"`, `"Not Available"`).
-2. **High-Null Column Exclusions:** Removed features with $>40\%$ missing values (`weight`, `payer_code`, `medical_specialty`).
-3. **Calculated Feature Bins:**
-   * **Age Group:** $[0\text{--}10)$ through $[90\text{--}100)$
-   * **Length of Stay Band:** `1-3 Days`, `4-7 Days`, `8+ Days`
-   * **Prior Inpatient Visits Band:** `0 Visits`, `1-2 Visits`, `3+ Visits`
-
-### Patient Privacy & Data Governance
-* **De-identification:** All direct identifiers (Patient Names, SSNs, exact admission dates) were stripped prior to model ingestion.
-* **HIPAA Alignment:** Dataset complies with **Safe Harbor** de-identification standards under HIPAA regulations.
-
 ---
 
 ## 📁 Repository Directory Structure
