@@ -3,7 +3,6 @@
 [![Power BI](https://img.shields.io/badge/Power_BI-Desktop-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 [![DAX](https://img.shields.io/badge/Data_Analysis-DAX-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](https://learn.microsoft.com/en-us/dax/)
 [![Dataset](https://img.shields.io/badge/Dataset-UCI_ML_Repository-0066CC?style=for-the-badge&logo=ucimlrepository&logoColor=white)](https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008)
-[![HIPAA Compliant](https://img.shields.io/badge/HIPAA-Safe_Harbor-2E7D32?style=for-the-badge&logo=shield&logoColor=white)](#patient-privacy--data-governance)
 
 ---
 
